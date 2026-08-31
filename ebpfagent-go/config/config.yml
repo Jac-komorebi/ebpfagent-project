@@ -1,0 +1,49 @@
+redis:
+  addr: "127.0.0.1:6379"
+  passwd: ""
+  db: 0
+agent:
+  id: "agent-01"
+  cleanup_minutes: 15
+detect:
+  max_api_calls: 100
+  max_io_counts: 50
+  max_total_io: 100
+  max_same_prompt: 5
+  max_total_loops: 100
+  resource_window: "10s"
+  logic_window: "10s"
+allow:
+  shell_processes:
+    - "nginx"
+    - "httpd"
+    - "httpd-foregroun"
+    - "http-nio"
+    - "lighttpd"
+    - "apache"
+    - "apache2"
+  debuggers:
+    - "gdb"
+    - "strace"
+    - "ltrace"
+    - "gdbserver"
+  package_managers:
+    - "dpkg"
+    - "rpm"
+    - "apt"
+    - "apt-get"
+    - "pacman"
+    - "yum"
+    - "dnf"
+  workspace: "/home/ebpfagent/workspace"
+  temp_dirs:
+    - "/tmp"
+    - "/var/tmp"
+    - "/dev/shm"
+  allowed_deleters:
+    - "containerd"
+    - "kubelet"
+    - "dockerd"
+  min_alert_severity: "low"
+  silence_threshold_sec: 30
+  max_deviations: 3
