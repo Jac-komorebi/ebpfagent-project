@@ -1,0 +1,47 @@
+# eBPF 编译产物
+*.o
+*.elf
+
+# 常见可执行文件
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# 测试和覆盖率
+*.test
+*.out
+*.coverprofile
+coverage.out
+
+# Go 工作区
+go.work
+go.work.sum
+
+# Rust 相关（如果混用）
+target/
+**/target/
+Cargo.lock
+*.rs.bk
+*.rlib
+*.prof*
+
+# IDE
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 日志和临时文件
+*.log
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
