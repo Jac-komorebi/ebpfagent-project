@@ -4,6 +4,15 @@ ebpfagent 是一个基于 eBPF 的 AI Agent 行为安全监测系统。Rust 侧�
 
 当前代码默认只关注进程名为 `agent` 的目标进程，用于降低无关系统噪声和用户态解析压力。
 
+## 项目组成
+
+- Rust/eBPF 采集与聚合：[`ebpfagent-rust/`](ebpfagent-rust/)
+- Go 行为安全检测与告警：[`ebpfagent-go/`](ebpfagent-go/)
+
+下面先介绍 Rust 侧的 eBPF 采集与聚合模块，再介绍 Go 侧的行为安全检测模块。
+
+## Rust 侧：eBPF 采集与聚合
+
 ## 功能概览
 
 - 进程启动监控：采集 `execve` 事件。
@@ -19,7 +28,7 @@ ebpfagent 是一个基于 eBPF 的 AI Agent 行为安全监测系统。Rust 侧�
 ## 项目结构
 
 ```
-my_rust_ebpf/
+ebpfagent-rust/
 ├── Cargo.toml              # Rust workspace 配置
 ├── rust-toolchain.toml     # nightly + rust-src 工具链配置
 ├── zhy-ebpf/               # 内核态 eBPF 程序
